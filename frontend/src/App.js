@@ -5,9 +5,11 @@ import AuthPage from './pages/Auth';
 import BookingsPage from './pages/Bookings';
 import EventsPage from './pages/Events';
 import MainNavigation from './components/Navigation/MainNavigation';
+import Chatbot from './pages/Chatbot';
 import AuthContext from './context/auth-context';
 
 import './App.css';
+
 
 class App extends Component {
   state = {
@@ -25,6 +27,8 @@ class App extends Component {
 
   render() {
     return (
+      <div>
+       
       <BrowserRouter>
         <React.Fragment>
           <AuthContext.Provider
@@ -49,12 +53,18 @@ class App extends Component {
                 {this.state.token && (
                   <Route path="/bookings" component={BookingsPage} />
                 )}
+                {this.state.token && (
+                  <Route path="/chatbot" component={Chatbot} />
+                )}
+                
+
                 {!this.state.token && <Redirect  to="/auth" exact />}
               </Switch>
             </main>
           </AuthContext.Provider>
         </React.Fragment>
       </BrowserRouter>
+      </div>
     );
   }
 }

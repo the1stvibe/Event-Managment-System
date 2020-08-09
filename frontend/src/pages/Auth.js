@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 import './Auth.css';
 import AuthContext from '../context/auth-context';
 
@@ -95,18 +96,18 @@ class AuthPage extends Component {
     return (
       <form className="auth-form" onSubmit={this.submitHandler}>
         <div className="form-control">
-          <label htmlFor="email">E-Mail</label>
-          <input type="email" id="email" ref={this.emailEl} />
+          
+          <TextField id="email" label="email" type="email" fullWidth="True"inputRef={this.emailEl} />
         </div>
         <div className="form-control">
-          <label htmlFor="password">Password</label>
-          <input type="password" id="password" ref={this.passwordEl} />
+          
+          <TextField  id="password" label="password" type="password" fullWidth="True" size='medium' inputRef={this.passwordEl} />
         </div>
         <div className="form-actions">
-          <button type="submit">Submit</button>
-          <button type="button" onClick={this.switchModeHandler}>
+          <Button variant="contained"color="primary"type="submit">Submit</Button>
+          <Button onClick={this.switchModeHandler}>
              {this.state.isLogin ? 'Register' : 'Login'}
-          </button>
+          </Button>
         </div>
       </form>
     );

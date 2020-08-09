@@ -6,6 +6,7 @@ import BookingList from '../components/Bookings/BookingList/BookingList';
 import BookingsChart from '../components/Bookings/BookingsChart/BookingsChart';
 import BookingsControls from '../components/Bookings/BookingsControls/BookingsControls';
 
+
 class BookingsPage extends Component {
   state = {
     isLoading: false,
@@ -115,6 +116,8 @@ class BookingsPage extends Component {
   };
 
   render() {
+
+    
     let content = <Spinner />;
     if (!this.state.isLoading) {
       content = (

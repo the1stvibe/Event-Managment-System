@@ -35,9 +35,9 @@ const bookingsChart = props => {
     chartData.datasets.push({
       
       fillColor: '#861919',
-      strokeColor: 'rgba(220,220,220,0.8)',
+      strokeColor: '#4169e1',
       highlightFill: 'rgba(220,220,220,0.75)',
-      highlightStroke: 'rgba(220,220,220,1)',
+      highlightStroke: 'black',
       data: values,
       
     });
@@ -47,7 +47,8 @@ const bookingsChart = props => {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <BarChart data={chartData} />
+      <BarChart data={chartData} 
+      width={"700px"} height={"300px"}options={{mainAspectRaio: false}}/>
     </div>
   );
 };
